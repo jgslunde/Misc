@@ -4,7 +4,8 @@ def huffman_zip(text):
 	# Takes a string of text (unicode compatible), and returns a dictionary with the
 	# huffman-code of every character, and the huffman-code itself, as a string
 	symbols_code = {}	# Dictionary with huffman code of each symbol.
-	nodes_dic = {}		# Dictionary of nodes. keys will be a list of symbols in the same node of the huffman tree, and elements will be their combigned weight.
+	nodes_dic = {}	# Dictionary of nodes. keys will be a list of symbols in the same node of the huffman tree,
+	# and elements will be their combigned weight.
 	for symbol in text:	# Makes every symbol into a node on the tree.
 		if tuple(symbol) in nodes_dic:
 			nodes_dic[tuple(symbol)] += 1
@@ -15,7 +16,8 @@ def huffman_zip(text):
 	if len(nodes_dic) == 1:	# Special case: only one letter(the while-loop doesn't cover this case)
 		symbols_code = {text[0]:'0'}
 
-	def queue(nodes_weight):# Takes the nodes dictionary and returns the keys(list of symbols) of the two nodes with lowest weight.
+	def queue(nodes_weight):
+	# Takes the nodes dictionary and returns the keys(list of symbols) of the two nodes with lowest weight.
 		next = [nodes_weight.keys()[0], nodes_weight.keys()[1]]
 		for s in nodes_weight:
 			if nodes_weight[s] < nodes_weight[next[0]] and tuple(s) != next[0] and tuple(s) != next[1]:
@@ -46,7 +48,8 @@ def huffman_unzip(symbols_code, zipped):
 	code_symbols = dict((v,k) for k,v in symbols_code.iteritems())	#Swaps keys and values in the dic.
 	text = ""
 	symbols = ""
-	for symbol in zipped:	# We read the code until we find a sequence that fits with a coded symbol. Then repeat from where we left.
+	for symbol in zipped:	# We read the code until we find a sequence that fits with a coded symbol.
+	# Then repeat from where we left.
 		symbols += symbol
 		if symbols in code_symbols:
 			text += code_symbols[symbols]

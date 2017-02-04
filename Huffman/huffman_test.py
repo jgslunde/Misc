@@ -73,4 +73,5 @@ print "\nSymbols/code dict: %s"%symbols_code
 
 print "\nOutput text:\n%s"%text
 
-print "\nThis text was compressed to %.2f bits per symbol, or %.2f percent of 8-bit ASCII size\n"%(float(len(zipped))/(len(text)),((len(zipped)*100.0/(len(text)*8.0))))
+print "\nThis text was compressed to %.2f bits per symbol, or %.2f percent of 8-bit ASCII size\n" \
+        % ( float(len(zipped))/(len(text)) , ((len(zipped)*100.0/(len(text)*8.0))) )
