@@ -1,0 +1,29 @@
+\documentclass[12p,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc,url}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{verbatim}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{epigraph}
+\usepackage{hyperref}
+
+\begin{document}
+\section*{The xrange function: Increased performance in for loops}
+The xrange function can replace the range function in any for loop with identical results and increased performance. There is no reason to use range instead of xrange in a for loop. The xrange function has a factor 2.3 higher performance, and eliminates the memory usage of the range function.
+
+The range function creates a list and stores it in memory, which the for loop then iterates over.\\
+The xrange function never creates a list, but simply gives the for loop each value as it comes along.
+
+
+\end{document}
