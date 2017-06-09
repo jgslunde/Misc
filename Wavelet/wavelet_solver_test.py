@@ -30,6 +30,6 @@ K1 = 24
 K2 = 200
 
 wavelet = WaveletSolver(signal_array, time_array)
-#wavelet.solve(K1, M, f_start, f_stop)
-#wavelet.plot()
-wavelet.benchmark(M, N)
+wavelet.solve(K1, M, f_start, f_stop)
+wavelet.plot('fig.png')
+#wavelet.benchmark(M, N)

@@ -2,6 +2,7 @@ from __future__ import division
 from numpy import sin, cos, exp, pi, log, linspace, logspace, log10
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 class WaveletSolver(object):
     def __init__(self, signal_array, time_array):
@@ -16,15 +17,19 @@ class WaveletSolver(object):
         # Fourier transformation of input signal
         self.FT_signal = np.fft.fft(signal_array)
 
+        self.WaveletIsSolved = False
+
         if (self.N&(self.N-1)):
             print "N = ", self.N
             print "Consider setting N as a power of 2 for optimal performance."
+
 
     def FT_wavelet(self, f, f_mid, K):
         # Analytical solution to fourier transform of wavelet with
         # center in f_mid and wavenumber K.
         # f is a linear array of frequencies.
         return 2*(np.exp(-(K*(f-f_mid)/f_mid)**2) -np.exp(-K**2)*np.exp(-(K*f/f_mid)**2))
+
 
     def solve(self, K, M, f_start, f_stop):
         # K = Wavenumber of wavelet.
@@ -55,7 +60,14 @@ points in your time-array) is %.2f, which is %.2f times your chosen max frequenc
             FT_wl = self.FT_wavelet(freq, self.wavelet_mid_freqs[i], K)
             self.WL_matrix[i,:] = np.sqrt(np.abs(np.fft.ifft(FT_wl*self.FT_signal)))
 
+        self.WaveletIsSolved = True
+
+
     def plot(self, savename = None):
+        if not self.WaveletIsSolved:
+            print "ERROR: Solve method has not been run."
+            sys.exit(1)
+
         plt.pcolormesh(self.time_array, self.wavelet_mid_freqs, self.WL_matrix)
         plt.xlabel('Time [seconds]')
         plt.ylabel('Frequency [Hertz]')
@@ -66,6 +78,7 @@ points in your time-array) is %.2f, which is %.2f times your chosen max frequenc
         else:
             plt.savefig(savename)
             plt.clf()
+
 
     def benchmark(self, M, N):
         time_array = linspace(0,10,N)
