@@ -279,7 +279,30 @@ Make sure to pull after you make the merge, since you do the merge on the websit
 
 
 \newpage
-\section{Useful commands}
+\section{Checkout - Reverting files to earlier versions}
+To view a list of earlier commits, run (the graph flag just gives some visuals about conflicts).
+\begin{verbatim}
+git log -- graph
+\end{verbatim}
+You can use the \textit{commit hash} of an earlier commit to visit the repository as it was right after that commit:
+\begin{verbatim}
+git checkout [commit_hash]
+\end{verbatim}
+None of this will do any changes to your repository, you are simply checking out an earlier commit.
+
+To get back on your latest commit, run
+\begin{verbatim}
+git checkout master
+\end{verbatim}
+
+If you add a filename to the checkout command, it works slightly differently. You will stay on your current commit, but the files you specify will be reverted to their specified commits, and added.
+\begin{verbatim}
+git checkout [commit_hash] [filename1] [filename2]
+\end{verbatim}
+If you then commit these changes, you will have reverted the files to their earlier versions.
+
+
+\section{Other useful commands}
 Moving files / renaming files, removing files
 \begin{verbatim}
 git mv [old_file_name_and_location] [new_file_name_and_location]
