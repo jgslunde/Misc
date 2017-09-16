@@ -29,12 +29,20 @@ if [ $var4 = 'y' ]
 	fi
 
 
-read -p 'Would you like to install lots of Python 2.7 packages? (y/n) ' var5
+read -p 'Would you like to install lots of Python packages? (y/n) ' var5
 if [ $var5 = 'y' ]
 	then
+	sudo -H install python-pip
+	sudo pip install --upgrade pip
 	sudo -H apt-get install python-setuptools python-pip mercurial
 	sudo -H pip install numpy sympy scipy nose pytest
 	sudo -H pip install ipython --upgrade
+	sudo pip install seaborn
+
+	sudo -H install python3-pip
+	sudo -H pip3 install matplotlib
+	sudo pip3 install seaborn
+	sudo apt-get install python3-tk
 	fi
 
 
@@ -45,12 +53,6 @@ if [ $var7 = 'y' ]
 	sudo ~/Downloads/dpkg -i atom-amd64.deb
 	sudo apt-get -f install
 
-read -p 'Would you like to install TexLive full? (y/n) ' var6
-if [ $var6 = 'y' ]
-	then
-	sudo -H apt-get install texlive-full
-	fi
-
 
 read -p 'Would you like to install spell check and syntax highlighting for Latex in Atom?' var8
 if [ $var = 'y' ]
@@ -58,6 +60,14 @@ if [ $var = 'y' ]
 	sudo apm install linter-spell
 	sudo apm install linter-spell-latex
 	sudo apm install language-latex
+
+
+read -p 'Would you like to install TexLive full? (y/n) ' var6
+if [ $var6 = 'y' ]
+	then
+	sudo -H apt-get install texlive-full
+	fi
+
 
 # Fixing broken packages:
 #sudo apt-get clean
