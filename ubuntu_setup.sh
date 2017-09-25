@@ -46,26 +46,38 @@ if [ $var5 = 'y' ]
 	fi
 
 
-read -p 'Would you like to install Atom? (y/n)' var 7
+read -p 'Would you like to install Atom? (y/n) ' var7
 if [ $var7 = 'y' ]
 	then
 	read -p 'please navigate to https://atom.io/ and download the .deb file to your Downloads folder. Press enter when done'
 	sudo ~/Downloads/dpkg -i atom-amd64.deb
 	sudo apt-get -f install
+	fi
 
-
-read -p 'Would you like to install spell check and syntax highlighting for Latex in Atom?' var8
+read -p 'Would you like to install spell check and syntax highlighting for Latex in Atom? (y/n) ' var8
 if [ $var = 'y' ]
 	then
 	sudo apm install linter-spell
 	sudo apm install linter-spell-latex
 	sudo apm install language-latex
+	fi
 
 
 read -p 'Would you like to install TexLive full? (y/n) ' var6
 if [ $var6 = 'y' ]
 	then
 	sudo -H apt-get install texlive-full
+	fi
+
+read -p 'Add command ap2 and ap3 for running all python files in a folder? (Will create files allepy3.sh and allepy2.sh in home directory) (y/n) ' var9
+if [ $var9 = 'y' ]
+	then
+	sudo wget -O ~/runpy3.sh 'https://raw.githubusercontent.com/asdfbat/Misc/master/runpy3.sh'
+	sudo ln -s ~/runpy3.sh /usr/bin/ap3
+	sudo chmod 777 /usr/bin/ap3
+	sudo wget -O ~/runpy2.sh 'https://raw.githubusercontent.com/asdfbat/Misc/master/runpy2.sh'
+	sudo ln -s ~/runpy2.sh /usr/bin/ap2
+	sudo chmod 777 /usr/bin/ap2
 	fi
 
 
