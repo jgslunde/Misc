@@ -37,12 +37,16 @@ if [ $var5 = 'y' ]
 	sudo -H apt-get install python-setuptools python-pip mercurial
 	sudo -H pip install numpy sympy scipy nose pytest
 	sudo -H pip install ipython --upgrade
-	sudo pip install seaborn
+	sudo -H pip install seaborn
+	sudo -H pip install numba
 
 	sudo -H install python3-pip
+	sudo pip3 install --upgrade pip
 	sudo -H pip3 install matplotlib
-	sudo pip3 install seaborn
-	sudo apt-get install python3-tk
+	sudo -H pip3 install seaborn
+	sudo -H apt-get install python3-tk
+	sudo -H pip3 install numba
+	sudo -H pip3 install sympy
 	fi
 
 
