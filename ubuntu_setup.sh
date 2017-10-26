@@ -39,6 +39,8 @@ if [ $var5 = 'y' ]
 	sudo -H pip install ipython --upgrade
 	sudo -H pip install seaborn
 	sudo -H pip install numba
+	sudo -H pip install cPython
+	sudo -H pip install line_profiler
 
 	sudo -H install python3-pip
 	sudo pip3 install --upgrade pip
@@ -47,6 +49,8 @@ if [ $var5 = 'y' ]
 	sudo -H apt-get install python3-tk
 	sudo -H pip3 install numba
 	sudo -H pip3 install sympy
+	sudo -H pip3 install cPython
+	sudo -H pip3 install line_profiler
 	fi
 
 
