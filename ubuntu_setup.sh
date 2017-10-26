@@ -1,3 +1,14 @@
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install git
+
+
+read -p 'Would you like to install Gnome Tweak Tool? (y/n) ' var10
+if [ $var10 = 'y' ]
+	then
+	sudo apt-get install gnome-tweak-tool
+	fi
+
 read -p 'Would you like to install Google Chrome? (y/n) ' var
 if [ $var = 'y' ]
 	then
@@ -6,18 +17,20 @@ if [ $var = 'y' ]
 	fi
 
 
-read -p 'Would you like to activate "minimize window on click"? (y/n) ' var2
-if [ $var2 = 'y' ]
-	then
-	gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
-	fi
+#read -p 'Would you like to activate "minimize window on click"? (y/n) ' var2
+#if [ $var2 = 'y' ]
+#	then
+#	gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ #launcher-minimize-window true
+#	fi
 
 
 read -p 'Would you like to install/update pip? (y/n) ' var3
 if [ $var3 = 'y' ]
 	then
-	sudo -H apt-get install python-pip python-dev build-essential
+	sudo -H apt-get install python-pip
+	sudo -H apt-get install python3-pip
 	sudo -H pip install --upgrade pip
+	sudo -H pip3 install --upgrade pip
 	sudo -H pip install --upgrade virtualenv
 	fi
 
@@ -33,7 +46,6 @@ read -p 'Would you like to install lots of Python packages? (y/n) ' var5
 if [ $var5 = 'y' ]
 	then
 	sudo -H install python-pip
-	sudo pip install --upgrade pip
 	sudo -H apt-get install python-setuptools python-pip mercurial
 	sudo -H pip install numpy sympy scipy nose pytest
 	sudo -H pip install ipython --upgrade
@@ -43,12 +55,12 @@ if [ $var5 = 'y' ]
 	sudo -H pip install line_profiler
 
 	sudo -H install python3-pip
-	sudo pip3 install --upgrade pip
 	sudo -H pip3 install matplotlib
 	sudo -H pip3 install seaborn
 	sudo -H apt-get install python3-tk
 	sudo -H pip3 install numba
 	sudo -H pip3 install sympy
+	sudo -H pip3 install pytest
 	sudo -H pip3 install cPython
 	sudo -H pip3 install line_profiler
 	fi
@@ -58,7 +70,7 @@ read -p 'Would you like to install Atom? (y/n) ' var7
 if [ $var7 = 'y' ]
 	then
 	read -p 'please navigate to https://atom.io/ and download the .deb file to your Downloads folder. Press enter when done'
-	sudo ~/Downloads/dpkg -i atom-amd64.deb
+	sudo dpkg -i ~/Downloads/atom-amd64.deb
 	sudo apt-get -f install
 	fi
 
@@ -71,12 +83,6 @@ if [ $var = 'y' ]
 	fi
 
 
-read -p 'Would you like to install TexLive full? (y/n) ' var6
-if [ $var6 = 'y' ]
-	then
-	sudo -H apt-get install texlive-full
-	fi
-
 read -p 'Add command ap2 and ap3 for running all python files in a folder? (Will create files allepy3.sh and allepy2.sh in home directory) (y/n) ' var9
 if [ $var9 = 'y' ]
 	then
@@ -86,6 +92,13 @@ if [ $var9 = 'y' ]
 	sudo wget -O ~/runpy2.sh 'https://raw.githubusercontent.com/asdfbat/Misc/master/runpy2.sh'
 	sudo ln -s ~/runpy2.sh /usr/bin/ap2
 	sudo chmod 777 /usr/bin/ap2
+	fi
+
+
+read -p 'Would you like to install TexLive full? (y/n) ' var6
+if [ $var6 = 'y' ]
+	then
+	sudo -H apt-get install texlive-full
 	fi
 
 
