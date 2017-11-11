@@ -17,6 +17,12 @@ if [ $var = 'y' ]
 	fi
 
 
+read -p 'Would you like to install Ranger file viewer? (y/n) ' var12
+if [ $var12 = 'y' ]
+	then
+	sudo apt-get install ranger
+	fi
+
 #read -p 'Would you like to activate "minimize window on click"? (y/n) ' var2
 #if [ $var2 = 'y' ]
 #	then
