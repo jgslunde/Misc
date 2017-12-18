@@ -70,7 +70,7 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 
 
 \subsection{Creating a new repository}
-Creating a new repository is most easially done on GitHubs website. 
+Creating a new repository is most easially done on GitHubs website.
 
 
 \subsection{Cloning a repository}
@@ -184,7 +184,7 @@ When you want to sync your local repository up with your remote one, to get chan
 \begin{verbatim}
 git pull [remote_repository] [branch_name]
 \end{verbatim}
-which again, can be simplified to 
+which again, can be simplified to
 \begin{verbatim}
 git pull
 \end{verbatim}
@@ -322,8 +322,10 @@ When you have already commited, but want to include additional changes to the co
 \begin{verbatim}
 git commit --amend
 \end{verbatim}
-which will include those changes in the previous commit.
-
+which will include those changes in the previous commim. You must then force-push to your remote repository, in order to overwrite the commit remotely:
+\begin{verbatim}
+git push --force
+\end{verbatim}
 
 \subsubsection{Unstaging a file}
 \begin{verbatim}
