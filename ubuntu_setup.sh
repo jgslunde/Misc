@@ -75,7 +75,7 @@ if [ $var7 = 'y' ]
 	fi
 
 read -p 'Would you like to install spell check and syntax highlighting for Latex in Atom? (y/n) ' var8
-if [ $var = 'y' ]
+if [ $var8 = 'y' ]
 	then
 	sudo apm install linter-spell
 	sudo apm install linter-spell-latex
