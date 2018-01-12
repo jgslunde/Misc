@@ -1,0 +1,5 @@
+[
+	{ "keys": ["ctrl+'"], "command": "toggle_comment", "args": { "block": true } },
+	{ "keys": ["ctrl+up"], "command": "swap_line_up" },
+	{ "keys": ["ctrl+down"], "command": "swap_line_down" }
+]
