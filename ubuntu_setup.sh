@@ -17,6 +17,26 @@ if [ $var = 'y' ]
 	fi
 
 
+read -p 'Would you like to install Sublime? (y/n) ' var14
+if [ $var14 = 'y' ]
+	then
+	sudo wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+	sudo apt-get install apt-transport-https
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/	sublime-text.list
+	echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+	sudo apt-get update
+	sudo apt-get install sublime-text
+	fi
+
+read -p 'Would you like to load custom Sublime macros? (y/n) ' var15
+if [ $var15 = 'y' ]
+	then
+	sudo wget 'https://raw.githubusercontent.com/asdfbat/Misc/master/sublime/Default%20(Linux).sublime-keymap'
+	sudo mv 'Default (Linux).sublime-keymap' ~/.config/sublime-text-3/Packages/User/
+	fi
+
+
+
 read -p 'Would you like to install Ranger file viewer? (y/n) ' var12
 if [ $var12 = 'y' ]
 	then
