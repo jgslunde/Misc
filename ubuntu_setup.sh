@@ -30,9 +30,15 @@ if [ $var14 = 'y' ]
 
 read -p 'Would you like to load custom Sublime macros? (y/n) ' var15
 if [ $var15 = 'y' ]
+	if [ ! -d ~/.config/sublime-text-3/Packages/User/ ]
+        then
+    	    mkdir -p ~/.config/sublime-text-3/Packages/User/
+	    fi
 	then
-	sudo wget 'https://raw.githubusercontent.com/asdfbat/Misc/master/sublime/Default%20(Linux).sublime-keymap'
-	sudo mv 'Default (Linux).sublime-keymap' ~/.config/sublime-text-3/Packages/User/
+		sudo wget 'https://raw.githubusercontent.com/asdfbat/Misc/master/sublime/Default%20(Linux).sublime-keymap'
+		sudo mv 'Default (Linux).sublime-keymap' ~/.config/sublime-text-3/Packages/User/
+		sudo wget 'https://raw.githubusercontent.com/asdfbat/Misc/master/sublime/Preferences.sublime-settings'
+		sudo mv 'Preferences.sublime-settings' ~/.config/sublime-text-3/Packages/User/
 	fi
 
 
