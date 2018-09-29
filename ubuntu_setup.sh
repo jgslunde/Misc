@@ -1,3 +1,7 @@
+# In case of troubles shutting down ubuntu, go into /etc/default/grub and add
+# acpi_rev_override=1 nouveau.modeset=0
+# to the GRUB_CMDLINE_LINUX_DEFAULT= string.
+
 sudo apt-get update
 sudo apt-get upgrade
 
@@ -23,6 +27,10 @@ echo "6b Setup GitHub username and email"
 echo "6c Setup SSH-keys (just press enter when promted for path or password)"
 echo ""
 echo "7) Setup aliases p and p2 for Python3 and Python2"
+echo ""
+echo "8) Gnome tweak tool"
+echo ""
+echo "9) Visual Studio Code"
 echo ""
 echo "99)  __Install TexLive (Full, 5GB)__"
 echo "99a: Core only"
@@ -149,6 +157,20 @@ then
     . ~/.bashrc
 fi
 
+
+if [ $installs["8"]} ]
+then
+    sudo apt-get install gnome-tweak-tool
+fi
+
+
+if [ $instals["9"]} ]
+then
+    echo "Installing Visual Studio Code."
+    echo "Please go to https://go.microsoft.com/fwlink/?LinkID=760868 and save the file."
+    sudo dpkg -i /home/jonas/Downloads/code_*.deb
+    sudo apt-get install -f
+fi
 
 
 if [ ${installs["99"]} ]
