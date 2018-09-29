@@ -19,8 +19,7 @@ class ProgressBar:
         sys.stdout.write("\b"*(self.bar_width+1))
         sys.stdout.write(":"*current_bars)
         sys.stdout.flush()
-        if (self.total - progress) < self.update_freq:
-            sys.stdout.write("\n")
+        sys.stdout.write("\n")
 
 if __name__ == "__main__":
     import time

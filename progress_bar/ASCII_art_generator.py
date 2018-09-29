@@ -5,13 +5,13 @@ import subprocess
 from numba import jit
 
 def wrapper(img_name, max_shape, return_as="array"):
-    img_array = reduce_img_BW(img_name, max_shape)
+    img = np.array(Image.open(img_name).convert("RGBA"))
+    img_array = reduce_img_BW(img, max_shape)
     ascii_art = ASCII_art_generator(img_array, return_as=return_as)
     return ascii_art
 
 
-def reduce_img(img_name, max_shape):
-    img = np.array(Image.open(img_name).convert("RGBA"))
+def reduce_img(img, max_shape):
     shape = np.shape(img[:,:,0])
     skips = np.array(shape)//np.array(max_shape)
 
@@ -25,11 +25,9 @@ def reduce_img(img_name, max_shape):
     return img_array
 
 
-def reduce_img_BW(img_name, max_shape):
-    img = np.array(Image.open(img_name).convert("RGBA"))
+def reduce_img_BW(img, max_shape):
     img_BW = (img[:,:,0] + img[:,:,1] + img[:,:,2])//3    # Converting to Black/White
     shape = np.shape(img_BW)
-
     skips = np.array(shape)//np.array(max_shape)
     if skips[0] == 0 or skips[1] == 0:
         skips = np.array([1,1])
