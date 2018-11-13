@@ -5,7 +5,7 @@ m2AU = 6.684E-12
 
 def write_to_xml(positions, time_array, number_of_planets, seed=666):
     if np.shape(positions) == (number_of_planets, len(time_array), 3):
-        pass
+        positions = np.array(positions)
     elif np.shape(positions) == (len(time_array), 3) and number_of_planets == 1:
         positions = np.array([positions,])
     else:
