@@ -32,6 +32,8 @@ echo "8) Gnome tweak tool"
 echo ""
 echo "9) Visual Studio Code"
 echo ""
+echo "10) Jupyter Notebook"
+echo ""
 echo "99)  __Install TexLive (Full, 5GB)__"
 echo "99a: Core only"
 echo ""
@@ -171,6 +173,13 @@ then
     sudo dpkg -i /home/jonas/Downloads/code_*.deb
     sudo apt-get install -f
 fi
+
+
+if [ $installs["10"]} ]
+then
+    sudo apt-get install jupyter-notebook
+fi
+
 
 
 if [ ${installs["99"]} ]
