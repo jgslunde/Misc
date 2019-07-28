@@ -21,6 +21,7 @@ Rename to "godot" and place in /usr/local/bin. You can now execute anywhere by r
 
 ## Pip
 sudo -H apt-get install python3-pip
+
 sudo -H pip3 install --upgrade pip
 
 
