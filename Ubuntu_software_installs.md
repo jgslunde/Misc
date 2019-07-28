@@ -33,3 +33,6 @@ sudo apt-get install jupyter-notebook
 
 ## Texlive
 sudo -H apt-get install texlive-full
+
+## VLC media player
+Visit website
