@@ -26,4 +26,10 @@ sudo -H pip3 install --upgrade pip
 
 
 ## Python Packages
-sudo -H pip3 install numpy sympy scipy seaborn matplotlib --upgrade
+sudo -H pip3 install numpy sympy scipy seaborn matplotlib pandas --upgrade
+
+sudo apt-get install jupyter-notebook
+
+
+## Texlive
+sudo -H apt-get install texlive-full
