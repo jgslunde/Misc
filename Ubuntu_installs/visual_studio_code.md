@@ -11,6 +11,11 @@
 * Python
 * Python Indent
 
+## C++
+* C/C++
+* 
+
+
 # Key bindings
 
 * "acceptSelectedSuggestionOnEnter", enter -> tab
