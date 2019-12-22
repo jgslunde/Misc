@@ -1,6 +1,6 @@
 ## Pip
 
-sudo -H apt-get install python3-pip
+sudo -H apt install python3-pip
 sudo -H pip install --upgrade pip
 
 ## Python Packages
