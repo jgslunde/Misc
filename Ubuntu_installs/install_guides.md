@@ -62,3 +62,6 @@ sudo apt-get install texlive-full
 ## Random
 Fix for screen tearing on video playback and scrolling on Ubuntu:
 http://ubuntuhandbook.org/index.php/2018/07/fix-screen-tearing-ubuntu-18-04-optimus-laptops/
+
+Enable fractional scaling (125%, 150%,...). Seems to induce lag in scrolling and stuff tho... Run in terminal:
+gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
