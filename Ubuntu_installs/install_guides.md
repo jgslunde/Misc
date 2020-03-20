@@ -7,6 +7,8 @@ sudo -H pip install --upgrade pip
 
 sudo -H pip install numpy sympy scipy seaborn matplotlib pandas tensorflow keras sklearn tqdm
 
+// sudo -H pip install tensorflow-gpu
+
 sudo apt install jupyter-notebook
 
 sudo -H pip install jupyterlab
