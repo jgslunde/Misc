@@ -11,6 +11,17 @@ Monitor i8k: `i8mon`
 
 Set manual fan speed: `i8kfan 1 1`
 
+Start/stop/status:
+```
+sudo systemctl start i8kmon.service
+sudo systemctl stop i8kmon.service
+sudo systemctl restart i8kmon.service
+sudo systemctl status i8kmon.service
+```
+
+Run on startup, add to config:
+
+`set config(daemon)      1`
 
 
 # Clone and make bios fan disable tool
